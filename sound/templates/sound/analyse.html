@@ -1,0 +1,66 @@
+{% extends 'sound/base.html' %}
+{% load static %}
+{% block title %} A.S.A | {{ file_name }} {% endblock %}
+
+{% block content %}
+    <center>
+        <h1 style="color: white">
+            SPECTROGRAM OF {{ file_name }}
+        </h1>
+        <input id="note" value="{{ notes }}" type="hidden">
+        <br>
+        <div id="content" >
+            <img src="sound/static/plots/{{ file_name }}.png" alt='{{ file_name }}' id="plot" >
+        </div>
+        <br>
+    </center><br><br><br>
+
+    <br><br><br>
+    <center>
+         <h1 style="color: white">
+            ACCOUSTIC
+        </h1>
+    </center>
+    <center>
+    <table id="solfa">
+    <script type="text/javascript">
+        function accoustic(){
+            var notes = {{ notes|safe }};
+            function write(keys){
+                document.write(keys);
+            }
+
+            // building file
+            for(var i=0;i<=notes.length;i++){
+                var counter = i%12;
+                if(counter == 0){
+                    write('<tr>');
+                    write('<td id="'+ i +'" ><center>  </center></td>');
+                    write('<td>:</td>');
+                }else if(counter == 11){
+                    write('</tr>');
+                }else{
+                    write('<td id="'+ i +'" style="width: 150px;">  </td>');
+                    if(counter != 11 && i != notes.length){
+                    write('<td>:</td>');
+                    }
+                }
+
+            }
+
+            // insering notes
+            for (var n = 0;n< notes.length;n++){
+                var note = notes[n]['note'],
+                    position = notes[n]['position'];
+                if(document.getElementById(String(position))){
+                    document.getElementById(String(position)).innerHTML +=' '+ note;
+                }
+            }
+
+
+        }
+        accoustic()
+    </script>
+     </table>
+</center>
+{% endblock %}

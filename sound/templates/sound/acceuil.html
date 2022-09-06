@@ -1,0 +1,16 @@
+{% extends "sound/base.html" %}
+
+{% block title %} A.S.A {% endblock %}
+
+{% block content %}
+    <center>
+        <h3 style="margin-top: 10%" id="tile">Get you audio file analysed here ! </h3>
+            <form method='post' enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input style="background-color: mediumseagreen;height: 50px;border: none;width: 100px;font-size: 20px"
+                       type="submit" value="GO !">
+            </form>
+    </center>
+    <br><br><br><br>
+{% endblock %}

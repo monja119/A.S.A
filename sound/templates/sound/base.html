@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <meta content="width=device-width" charset="utf-8">
+    <title>{% block title %} Auto Spectrogramme Accoustic {% endblock %} </title>
+</head>
+<body>
+    <header>
+        <center>
+            <h1>
+                <img class="logo round" src="{% static 'logo.jpg' %}" alt="auto_sound_analysis">
+                <br>A.S.A
+            </h1>
+            <p style="font-size: 15px;margin-top: -3%">...Auto Spectrogramme & Acoustic...</p>
+
+        </center>
+    </header>
+
+    <section id="content">
+        {% block content %}{% endblock %}
+    </section>
+
+    <footer>
+        <nav id="footer">
+            <center>
+                <h5>
+                    <img class="logo round" src="{% static 'logo.jpg' %}" alt="auto_sound_analysis">
+                <br>A.S.A
+                </h5>
+            <ul>
+                <li><a style="color: purple;text-decoration: none" href="{% url 'sound:home' %}">HOME</a></li>
+                <li><a style="color: purple;text-decoration: none" href="{% url 'termes' %}">TERMS</a></li>
+                <li><a style="color: purple;text-decoration: none" href="{% url 'contact' %}">CONTACT</a></li>
+            </ul>
+                ©2022asa
+            </center>
+
+        </nav>
+
+    </footer>
+</body>
+</html>

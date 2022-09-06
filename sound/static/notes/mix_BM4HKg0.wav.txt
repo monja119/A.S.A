@@ -1,0 +1,7 @@
+[{'note': 'La3', 'ton ': 2, 'mesure ': 0, 'position': 7400}
+ {'note': 'Do', 'ton ': 2, 'mesure ': 0, 'position': 7590}
+ {'note': 'li', 'ton ': 2, 'mesure ': 0, 'position': 8074}
+ {'note': 'La3', 'ton ': 2, 'mesure ': 0, 'position': 8182} ':'
+ {'note': 'La3', 'ton ': 3, 'mesure ': 0, 'position': 14302}
+ {'note': 'li', 'ton ': 3, 'mesure ': 0, 'position': 19779} ' | ' ':'
+ ' | ' ':' ' | ' ':' ' | ']
